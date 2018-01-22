@@ -96,6 +96,10 @@ namespace itunes_win
 			if (track->get_Artist(trackArtist.GetAddress()) != S_OK) throw std::exception("track->get_Artist failed.");
 			result.artist = util::bstrToUtf8String(trackArtist);
 
+			_bstr_t trackAlbum;
+			if (track->get_Album(trackAlbum.GetAddress()) != S_OK) throw std::exception("track->get_Album failed.");
+			result.album = util::bstrToUtf8String(trackAlbum);
+
 			com_unique_ptr<IITArtworkCollection> artworks;
 			if (track->get_Artwork(reinterpret_cast<IITArtworkCollection**>(&artworks)) != S_OK) throw std::exception("track->get_Artwork failed.");
 

@@ -20,6 +20,7 @@ namespace itunes_win
     {
         std::string name;
         std::string artist;
+		std::string album;
 		int artworkCount;
         std::string artworkFormat;
     };
