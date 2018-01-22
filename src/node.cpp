@@ -39,6 +39,8 @@ public:
                 Nan::New(nowplayingTrack.name).ToLocalChecked());
             obj->Set(Nan::New("artist").ToLocalChecked(),
                 Nan::New(nowplayingTrack.artist).ToLocalChecked());
+			obj->Set(Nan::New("album").ToLocalChecked(),
+				Nan::New(nowplayingTrack.album).ToLocalChecked());
             obj->Set(Nan::New("artworkCount").ToLocalChecked(),
 				Nan::New(nowplayingTrack.artworkCount));
 			obj->Set(Nan::New("artworkFormat").ToLocalChecked(),
